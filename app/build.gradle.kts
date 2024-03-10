@@ -17,6 +17,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    
+    buildFeatures.viewBinding = true
 
     compileOptions {
         sourceCompatibility = Version.Kotlin.javaSource
