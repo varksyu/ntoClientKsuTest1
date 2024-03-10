@@ -1,6 +1,6 @@
 [submodule "gradle"]
 	path = gradle
-	url = https://sicampus.ru/gitea/core/gradle.git
+	url = https://git.sicampus.ru/core/gradle.git
 [submodule "buildSrc"]
 	path = buildSrc
-	url = https://sicampus.ru/gitea/core/dependecies.git
+	url = https://git.sicampus.ru/core/dependecies.git
