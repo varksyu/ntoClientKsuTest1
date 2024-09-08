@@ -1,4 +1,5 @@
 plugins {
+    kotlinAndroid
     androidApplication
 }
 
@@ -17,12 +18,16 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-    
+
     buildFeatures.viewBinding = true
 
     compileOptions {
         sourceCompatibility = Version.Kotlin.javaSource
         targetCompatibility = Version.Kotlin.javaSource
+    }
+
+    kotlinOptions {
+        jvmTarget = Version.Kotlin.jvmTarget
     }
 }
 
