@@ -2,4 +2,5 @@
 plugins {
     androidApplication version Version.agp apply false
     kotlinJvm version Version.Kotlin.language apply false
+    id("com.google.dagger.hilt.android") version "2.51.1" apply false
 }
