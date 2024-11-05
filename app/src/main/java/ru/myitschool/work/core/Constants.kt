@@ -1,5 +1,5 @@
 package ru.myitschool.work.core
-// НЕ ИЗМЕНЯЙТЕ ЭТОТ ФАЙЛ. В ТЕСТАХ ОН БУДЕМ ВОЗВРАЩЁН В ИСХОДНОЕ СОСТОЯНИЕ
+// БЕРИТЕ И ИЗМЕНЯЙТЕ ХОСТ ТОЛЬКО ЗДЕСЬ И НЕ БЕРИТЕ ИЗ ДРУГИХ МЕСТ. ФАЙЛ ПЕРЕМЕЩАТЬ НЕЛЬЗЯ
 object Constants {
     const val SERVER_ADDRESS = "http://localhost:8090"
 }
