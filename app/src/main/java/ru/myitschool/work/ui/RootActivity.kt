@@ -1,6 +1,7 @@
 package ru.myitschool.work.ui
 
 import android.os.Bundle
+import android.provider.ContactsContract.Profile
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.createGraph
@@ -11,6 +12,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import ru.myitschool.work.R
 import ru.myitschool.work.ui.login.LoginDestination
 import ru.myitschool.work.ui.login.LoginFragment
+import ru.myitschool.work.ui.profile.ProfileDestination
+import ru.myitschool.work.ui.profile.ProfileFragment
 import ru.myitschool.work.ui.qr.scan.QrScanDestination
 import ru.myitschool.work.ui.qr.scan.QrScanFragment
 
@@ -31,6 +34,8 @@ class RootActivity : AppCompatActivity() {
             ) {
                 fragment<LoginFragment, LoginDestination>()
                 fragment<QrScanFragment, QrScanDestination>()
+                fragment<ProfileFragment, ProfileDestination>()
+
             }
         }
 
