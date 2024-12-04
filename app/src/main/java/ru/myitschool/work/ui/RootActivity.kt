@@ -1,7 +1,7 @@
 package ru.myitschool.work.ui
 
+import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.Profile
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.createGraph
@@ -12,10 +12,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import ru.myitschool.work.R
 import ru.myitschool.work.ui.login.LoginDestination
 import ru.myitschool.work.ui.login.LoginFragment
-import ru.myitschool.work.ui.profile.ProfileDestination
-import ru.myitschool.work.ui.profile.ProfileFragment
 import ru.myitschool.work.ui.qr.scan.QrScanDestination
 import ru.myitschool.work.ui.qr.scan.QrScanFragment
+
 
 // НЕ ИЗМЕНЯЙТЕ НАЗВАНИЕ КЛАССА!
 @AndroidEntryPoint
@@ -23,7 +22,14 @@ class RootActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_root)
+        val prefs = getSharedPreferences("app", MODE_PRIVATE)
+        val login = prefs.getString("login", null)
 
+        if (login != null) {
+            startProfileActivity()
+        } else {
+            startLoginActivity()
+        }
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
 
@@ -34,7 +40,8 @@ class RootActivity : AppCompatActivity() {
             ) {
                 fragment<LoginFragment, LoginDestination>()
                 fragment<QrScanFragment, QrScanDestination>()
-                fragment<ProfileFragment, ProfileDestination>()
+                //fragment<ProfileFragment, ProfileDestination>()
+
 
             }
         }
@@ -57,5 +64,17 @@ class RootActivity : AppCompatActivity() {
             false
         }
         return popBackResult || super.onSupportNavigateUp()
+    }
+
+    private fun startLoginActivity() {
+        val intent = Intent(this, AuthorizationActivity::class.java)
+        startActivity(intent)
+        finish() // Закрываем RootActivity, чтобы оно не оставалось в стеке
+    }
+
+    private fun startProfileActivity() {
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
+        finish() // Закрываем RootActivity
     }
 }

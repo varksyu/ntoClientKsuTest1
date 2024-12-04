@@ -11,6 +11,6 @@ public class ProfileViewModel  extends ViewModel {
     public  final LiveData<StateInfo> stateInfoLiveData = mutableStateInfoLiveData;
 
     public class StateInfo {
-        @Nullable
+
     }
 }

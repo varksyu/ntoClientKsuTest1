@@ -20,6 +20,15 @@
         android:theme="@style/Theme.Default"
         tools:targetApi="31">
         <activity
+            android:name=".ui.QrResult"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AuthorizationActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.RootActivity"
             android:exported="true">
             <intent-filter>
